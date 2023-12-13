@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './App.css'
 import Product from './components/Product'
+import Form from './components/Form'
 function App() {
   const products=[
     {name:"Samsung",price:12000,id:1},
@@ -10,12 +11,16 @@ function App() {
   ]
 
   return (
-    <div className='productsBox'>
-      {products.map((item)=>{
-        return(<Product key={item.id} data={item}/>)
-      })
-      }
+    <div>
+      <div className='productsBox'>
+        <Form/>
+        {products.map((item)=>{
+          return(<Product key={item.id} data={item}/>)
+          })
+        }
+      </div>
     </div>
+   
   )
 }
 
